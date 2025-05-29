@@ -10,6 +10,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from importlib.metadata import version
 
 from lib.prune import prune_wanda, prune_wanda_outlier, prune_wanda_alpha, print_sparsity_information
+from lib.prune import prune_magnitude, prune_magnitude_outlier, prune_magnitude_alpha
 
 print('torch', version('torch'))
 print('transformers', version('transformers'))
@@ -110,6 +111,14 @@ def main():
         prune_wanda_outlier(args, model, tokenizer, prune_n=prune_n, prune_m=prune_m, device=args.device, trim=args.use_trim)
     elif args.prune_method == "wanda_alpha":
         prune_wanda_alpha(args, model, tokenizer, prune_n=prune_n, prune_m=prune_m, device=args.device, trim=args.use_trim)
+    elif args.prune_method == "magnitude":
+        prune_magnitude(args, model, tokenizer, prune_n=prune_n, prune_m=prune_m, device=args.device, trim=args.use_trim)
+    elif args.prune_method == "magnitude_owl":
+        prune_magnitude_outlier(args, model, tokenizer, prune_n=prune_n, prune_m=prune_m, device=args.device, trim=args.use_trim)
+    elif args.prune_method == "magnitude_alpha":
+        prune_magnitude_alpha(args, model, tokenizer, prune_n=prune_n, prune_m=prune_m, device=args.device, trim=args.use_trim)
+    else:
+        print("No valid pruning method specified!")
     print("prune time: ", time.time() - t_prune)
 
     ### Print Sparsity ###
