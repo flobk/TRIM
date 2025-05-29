@@ -19,7 +19,7 @@ We currently support naive integration of Wanda and Magnitude importance scores,
 - `--qmetric`: Select the TRIM layer quality metric, default is 'cosim_flat'.
 - `--qmetric_dimwise`: Select the TRIM dimensionwise quality metric, default is 'cosim'.
 - `--forbid_neg_lr`: Prevent TRIM from using negative learning rates if passed.
-- `--input_recalc`: Recalculate input vectors for output and MLP projections if passed.
+- `--input_recalc`: Recalculate input vectors for out-proj and MLP projections if passed.
 ---
 ### Example scripts
 
