@@ -1,7 +1,7 @@
 # TRIM: Targeted Row-wise Iterative Metric-driven Pruning
 This repository contains code for pruning Large Language Models (LLMs) with unique *dimensionwise sparsity ratios* as presented in our [📖 Paper](https://arxiv.org/pdf/2505.16743). 
 TRIM applies *varying levels of pruning to each row of a weight matrix* through a metric-driven iterative optimization process.  
-We currently support naive integration of Wanda importance scores, as well as OWL, and AlphaPruning for layerwise sparsity allocation.
+We currently support naive integration of Wanda and Magnitude importance scores, as well as OWL, and AlphaPruning for layerwise sparsity allocation.
 
 ![TRIM Illustration](TRIM_Illustration.png)
 
