@@ -34,7 +34,7 @@ python main.py  --model Qwen/Qwen2.5-3B \
                 --device cuda \
                 --Lamda 0.12 \
                 --Hyper_m 5.0 \
-                --save_layer_ratio
+                --save_layer_ratio # save OWL ratios
 ```
 
 The following script prunes the Qwen2.5-72B model with TRIM and Wanda scores to 70% sparsity.
@@ -46,8 +46,8 @@ python main.py  --model Qwen/Qwen2.5-72B \
                 --use_trim \
                 --sparsity_ratio 0.7 \
                 --task None \
-                --device cpu \
-                --save_masks /mnt/lustre/work/... \
+                --device cpu \ # offload model to cpu memory
+                --save_masks /mnt/... \ # save pruning masks
                 --epsilon 0.1
 ```
 
