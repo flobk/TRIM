@@ -73,7 +73,7 @@ python main.py  --model Qwen/Qwen2.5-72B \
 - `AlphaPruning/` # Directory to calculate and save AlphaPruning layer statistics
 
 ## Notes
-The implementation of the code is mainly build upon the [Wanda](https://github.com/locuslab/wanda) repository. Notable changes include:
+The implementation of the code is mainly built upon the [Wanda](https://github.com/locuslab/wanda) repository. Notable changes include:
 - Code now supports CPU offloading. This means the model can be loaded to CPU memory and only the layer that gets pruned in the current iteration resides on the GPU.
 This allows pruning of models where the model naively wouldn't fit into GPU memory. E.g. Qwen2.5-72B in FP16 can be pruned on one A100 40GB and 256GB memory.
 - Inference loop uses position_embeddings and not position_ids for package compatibility. Change if necessary. 
