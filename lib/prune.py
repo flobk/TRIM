@@ -221,7 +221,6 @@ def prune_wanda(args, model, tokenizer, device=torch.device("cuda:0"), prune_n=0
                 else:        out = layer(inp_gpu, attention_mask=attention_mask, position_embeddings=position_embeddings)[0]
                 outs[j] = out.detach().cpu()  # Keep as tensor for next iteration
                 del inp_gpu, out
-                torch.cuda.empty_cache()
         for h in handles:
             h.remove()
 
@@ -256,7 +255,6 @@ def prune_wanda(args, model, tokenizer, device=torch.device("cuda:0"), prune_n=0
                                 else:        out = layer(inp_gpu, attention_mask=attention_mask, position_embeddings=position_embeddings)[0]
                                 outs[j] = out.detach().cpu()  # Keep as tensor for next iteration
                                 del inp_gpu, out
-                                torch.cuda.empty_cache()
                         for h in handles:
                             h.remove()
                 ## Get input vectors
@@ -323,7 +321,6 @@ def prune_wanda(args, model, tokenizer, device=torch.device("cuda:0"), prune_n=0
                 else:        out = layer(inp_gpu, attention_mask=attention_mask, position_embeddings=position_embeddings)[0]
                 outs[j] = out.detach().cpu()  # Keep as tensor for next iteration
                 del inp_gpu, out
-                torch.cuda.empty_cache()
         inps, outs = outs, inps
 	
         if device == 'cpu':
@@ -419,7 +416,6 @@ def prune_wanda_outlier(args, model, tokenizer, device=torch.device("cuda:0"), p
                     else:        out = layer(inp_gpu, attention_mask=attention_mask, position_embeddings=position_embeddings)[0]
                     outs[j] = out.detach().cpu()  # Keep as tensor for next iteration
                     del inp_gpu, out
-                    torch.cuda.empty_cache()
             for h in handles:
                 h.remove()
                 
@@ -435,7 +431,6 @@ def prune_wanda_outlier(args, model, tokenizer, device=torch.device("cuda:0"), p
                     else:        out = layer(inp_gpu, attention_mask=attention_mask, position_embeddings=position_embeddings)[0]
                     outs[j] = out.detach().cpu()  # Keep as tensor for next iteration
                     del inp_gpu, out
-                    torch.cuda.empty_cache()
             inps, outs = outs, inps
             if device == 'cpu':
                 print("Move back to CPU")
@@ -580,7 +575,6 @@ def prune_magnitude(args, model, tokenizer, device=torch.device("cuda:0"), prune
                     else:        out = layer(inp_gpu, attention_mask=attention_mask, position_embeddings=position_embeddings)[0]
                     outs[j] = out.detach().cpu()  # Keep as tensor for next iteration
                     del inp_gpu, out
-                    torch.cuda.empty_cache()
             for h in handles:
                 h.remove()
 
@@ -615,7 +609,6 @@ def prune_magnitude(args, model, tokenizer, device=torch.device("cuda:0"), prune
                                 else:        out = layer(inp_gpu, attention_mask=attention_mask, position_embeddings=position_embeddings)[0]
                                 outs[j] = out.detach().cpu()  # Keep as tensor for next iteration
                                 del inp_gpu, out
-                                torch.cuda.empty_cache()
                         for h in handles:
                             h.remove()
                 ## Get input vectors
@@ -642,7 +635,6 @@ def prune_magnitude(args, model, tokenizer, device=torch.device("cuda:0"), prune
                     else:        out = layer(inp_gpu, attention_mask=attention_mask, position_embeddings=position_embeddings)[0]
                     outs[j] = out.detach().cpu()  # Keep as tensor for next iteration
                     del inp_gpu, out
-                    torch.cuda.empty_cache()
             inps, outs = outs, inps
         
             if device == 'cpu':
@@ -738,7 +730,6 @@ def prune_magnitude_outlier(args, model, tokenizer, device=torch.device("cuda:0"
                     else:        out = layer(inp_gpu, attention_mask=attention_mask, position_embeddings=position_embeddings)[0]
                     outs[j] = out.detach().cpu()  # Keep as tensor for next iteration
                     del inp_gpu, out
-                    torch.cuda.empty_cache()
             for h in handles:
                 h.remove()
                 
@@ -754,7 +745,6 @@ def prune_magnitude_outlier(args, model, tokenizer, device=torch.device("cuda:0"
                     else:        out = layer(inp_gpu, attention_mask=attention_mask, position_embeddings=position_embeddings)[0]
                     outs[j] = out.detach().cpu()  # Keep as tensor for next iteration
                     del inp_gpu, out
-                    torch.cuda.empty_cache()
             inps, outs = outs, inps
             if device == 'cpu':
                 print("Move back to CPU")
