@@ -79,6 +79,21 @@ This allows pruning of models where the model naively wouldn't fit into GPU memo
 - Inference loop uses position_embeddings and not position_ids for package compatibility. Change if necessary. 
 - The pruning scripts for both OPT and non-OPT models have been unified into one.
 
+## Citation
+**TRIM: Achieving Extreme Sparsity with Targeted Row-wise Iterative Metric-driven Pruning**  [![arXiv](https://img.shields.io/badge/arXiv-2505.16743-b31b1b.svg)](https://arxiv.org/pdf/2505.16743)   </br>
+*Florentin Beck¹, William Rudman², Carsten Eickhoff¹'²*  <br>
+University of Tübingen¹, Brown University²   <br>
+```bibtex
+@misc{beck2025trimachievingextremesparsity,
+      title={TRIM: Achieving Extreme Sparsity with Targeted Row-wise Iterative Metric-driven Pruning}, 
+      author={Florentin Beck and William Rudman and Carsten Eickhoff},
+      year={2025},
+      eprint={2505.16743},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.16743}, 
+}
+```
 
 ## Acknowledgements
 This code is based on the [SparseGPT](https://github.com/IST-DASLab/sparsegpt), [Wanda](https://github.com/locuslab/wanda), [OWL](https://github.com/luuyin/OWL) and [AlphaPruning](https://github.com/haiquanlu/AlphaPruning) repositories.
