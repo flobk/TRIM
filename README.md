@@ -5,7 +5,7 @@ We currently support naive integration of Wanda and Magnitude importance scores,
 
 ![TRIM Illustration](TRIM_Illustration.png)
 
-
+ 
 ## Usage
 ### Overview of the main arguments
 - `--model`: Specify the model to use, e.g., 'facebook/opt-13b'.
